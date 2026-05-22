@@ -220,3 +220,5 @@ __marimo__/
 # macOS and Windows system clutter
 .DS_Store
 Thumbs.db
+
+*.zip

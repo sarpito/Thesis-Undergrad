@@ -1,0 +1,94 @@
+
+shapefile check
+CRS: EPSG:25830
+Rows: 20
+Geometry types: {'MultiPolygon': 11, 'Polygon': 9}
+Name field: 'COMARCA'
+All values: ['ALTO DEBA', 'ARRATIA-NERVIÓN', 'AÑANA', 'BAJO BIDASOA', 'BAJO DEBA', 'CANTÁBRICA ALAVESA', 'DONOSTIALDEA', 'DURANGUESADO', 'ENCARTACIONES', 'ESTRIBACIONES DEL GORBEA', 'GERNIKA-BERMEO', 'GOIERRI', 'GRAN BILBAO', 'LLANADA ALAVESA', 'MARKINA-ONDARROA', 'MONTAÑA ALAVESA', 'PLENTZIA-MUNGIA', 'RIOJA ALAVESA', 'TOLOSALDEA', 'UROLA KOSTA']
+
+All 20 alias mappings resolved.
+
+Graph: 20 comarcas, 39 shared-border edges.
+
+Fitting M0ns  (k=22)
+a=0.9129  sigma=0.00000  lam=0.00000  D=0.000000  SSE=0.058643  RMSE=1.7303pp
+
+Fitting M0  (k=24)
+a=0.9204  sigma=0.00138  lam=0.26872  D=0.000000  SSE=0.058372  RMSE=1.7242pp
+
+Fitting MR  (k=44)
+a=0.9201  sigma=0.00060  lam=0.05378  D=0.000000  SSE=0.058506  RMSE=1.7259pp
+
+shock test
+M0ns: RMSE=1.7303pp
+M0  : RMSE=1.7242pp   delta=-0.0061pp   sigma=0.00138   lam=0.26872
+delta RMSE: -0.0061pp
+
+
+AIC/BIC
+n=160  (20 units x 8 transitions)
+
+Model    k         SSE   RMSE(pp)       AIC      AICc       BIC  deltaAIC  deltaBIC
+  M0ns    22     0.05864     1.7303  -1221.83  -1214.45  -1154.18     +0.00     +0.00
+  M0      24     0.05837     1.7242  -1218.58  -1209.69  -1144.77     +3.26     +9.41
+  MR      44     0.05851     1.7259  -1178.21  -1143.77  -1042.90    +43.63   +111.28
+
+  Best -> AIC: M0ns  |  AICc: M0ns  |  BIC: M0ns
+
+s_i vs x_0 (M0ns)
+OLS:  s_i = +0.4891 + +0.0489*x_0
+R2=0.8922  r=0.9446  p=0.000000
+Spearman: rho=0.9429  p=0.000000
+s_i range: [0.4846, 0.5333]
+r_i vs x_0 REGRESSION  (MR)
+OLS:  r_i = +0.1040 + -0.0045*x_0
+R2=0.0241  r=-0.1552  p=0.5137
+Spearman: rho=-0.1654  p=0.4858
+
+stability analysis
+a (M0ns)=0.9129
+AS reference: a ~ 1.31
+
+ a < 1 (a=0.9129): x* is stable attractor, no tipping point.
+
+  Unit                         x_0     s_i       x*  lambda(x*)       Basin       Obs  OK/FAIL
+  Anana                     0.009   0.4846   0.3304   -0.0465    toward x*     rising   OK
+  Cantabrica_Alavesa        0.042   0.4968   0.4635   -0.0463    toward x*     rising   OK
+  Gorbeialdea               0.272   0.4977   0.4740   -0.0463    toward x*     rising   OK
+  Llanada_Alavesa           0.033   0.4898   0.3854   -0.0464    toward x*     rising   OK
+  Montana_Alavesa           0.005   0.4955   0.4491   -0.0463    toward x*     rising   OK
+  Rioja_Alavesa             0.008   0.4926   0.4155   -0.0463    toward x*     rising   OK
+  Debagoiena                0.519   0.5160   0.6761   -0.0465    toward x*     rising   OK
+  Bidasoa_Beherea           0.247   0.4982   0.4797   -0.0463    toward x*     rising   OK
+  Debabarrena               0.463   0.5122   0.6363   -0.0464    toward x*     rising   OK
+  Donostialdea              0.254   0.5011   0.5126   -0.0463    toward x*     rising   OK
+  Goierri                   0.455   0.5143   0.6587   -0.0465    toward x*     rising   OK
+  Tolosaldea                0.614   0.5223   0.7359   -0.0467    toward x*     rising   OK
+  Urola_Kosta               0.715   0.5274   0.7788   -0.0470    toward x*     rising   OK
+  Arratia_Nerbioi           0.468   0.5080   0.5909   -0.0463    toward x*     rising   OK
+  Durangaldea               0.354   0.5031   0.5351   -0.0463    toward x*     rising   OK
+  Enkartazioak              0.010   0.4961   0.4552   -0.0463    toward x*     rising   OK
+  Gernika_Bermeo            0.696   0.5220   0.7329   -0.0467    toward x*     rising   OK
+  Gran_Bilbao               0.063   0.4875   0.3603   -0.0464    toward x*     rising   OK
+  Markina_Ondarroa          0.795   0.5333   0.8225   -0.0473    toward x*    falling   FAIL
+  Plentzia_Mungia           0.453   0.5011   0.5130   -0.0463    toward x*     rising   OK
+
+Basin accuracy: 19/20 (95%)
+
+fig1 saved
+Fig2 saved
+Fig3 saved
+Fig4 saved
+fig5 saved
+SUMMARY
+
+N=20 units  |  N_obs=160  |  Models: ['M0ns', 'M0', 'MR']
+M0ns : a=0.9129  D=0.000000  sigma=0.00000  RMSE=1.7303pp
+M0   : a=0.9204  D=0.000000  sigma=0.00138  RMSE=1.7242pp
+MR   : a=0.9201  D=0.000000  sigma=0.00060  RMSE=1.7259pp
+
+AIC: M0ns  AICc: M0ns  BIC: M0ns
+Prestige grounding (M0ns): R2=0.892  p=0.0000
+Basin accuracy: 19/20 (95%)
+
+done

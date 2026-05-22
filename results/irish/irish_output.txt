@@ -1,0 +1,84 @@
+GeoJSON check
+CRS : EPSG:2157
+Rows : 26
+Geom types : {'MultiPolygon': 13, 'Polygon': 13}
+Name field : 'COUNTY'
+All values : ['CARLOW', 'CAVAN', 'CLARE', 'CORK', 'DONEGAL', 'DUBLIN', 'GALWAY', 'KERRY', 'KILDARE', 'KILKENNY', 'LAOIS', 'LEITRIM', 'LIMERICK', 'LONGFORD', 'LOUTH', 'MAYO', 'MEATH', 'MONAGHAN', 'OFFALY', 'ROSCOMMON', 'SLIGO', 'TIPPERARY', 'WATERFORD', 'WESTMEATH', 'WEXFORD', 'WICKLOW']
+
+All 26 alias mappings resolved.
+
+Graph: 26 counties, 58 shared-border edges.
+
+Fitting M0ns (k=28)
+a=0.9051 sigma=0.00000 lam=0.00000 D=0.030318 SSE=0.000031 RMSE=0.0490pp
+
+Fitting M0 (k=30)
+a=1.7329 sigma=0.00760 lam=0.01228 D=0.000695 SSE=0.000021 RMSE=0.0396pp
+
+Fitting MR (k=56)
+a=2.4965 sigma=0.00954 lam=0.01545 D=0.000306 SSE=0.000063 RMSE=0.0686pp
+
+shock test
+M0ns: RMSE=0.0490pp
+M0 : RMSE=0.0396ppdelta=-0.0093ppsigma=0.00760lam=0.01228
+
+AIC, BIC, AICc comparison
+n=78 (26 units x 3 transitions)
+
+Model    k        SSE  RMSE(pp)      AIC     AICc      BIC deltaAIC deltaBIC
+M0ns    28    0.00003    0.0490 -1093.57 -1060.43 -1027.58   +25.46   +20.75
+M0      30    0.00002    0.0396 -1119.04 -1079.46 -1048.33    +0.00    +0.00
+MR      56    0.00006    0.0686  -982.04  -678.04  -850.06  +137.00  +198.27
+
+AIC: M0 | AICc: M0 | BIC: M0
+
+Pure A-S Fit
+AS_shared (k=2): s=0.5025 a=1.0175 SSE=0.000447 RMSE=0.1656pp
+AS_indiv (k=N+1=27): shared a=0.8449 SSE=0.000045  RMSE=0.0551pp
+Prestige grounding: R2=0.7938 Spearman rho=0.6075  p=0.0000
+AS_free (k=2N=52): mean a=0.8101 median a=0.8262 std a=0.1270 SSE=0.000016 RMSE=0.0336pp
+
+Model           k      AIC     AICc      BIC
+AS_shared       2   -937.48   -937.32   -932.76
+AS_indiv       27  -1067.29  -1037.05  -1003.66
+AS_free        52  -1097.10   -876.62   -974.55
+
+Best by AIC: AS_free
+AS_shared recovered: a = 1.0175
+AS_indiv recovered: a = 0.8449
+AS_free mean: a = 0.8101 (range [0.604, 1.019])
+Irish data does NOT recover a ~ 1.31.
+
+s_i vs x_0: PRESTIGE GROUNDING (M0ns spatial)
+OLS: s_i = +0.2412 + +4.2212*x_0
+R2=0.2581 r=0.5080 p=0.008058
+Spearman: rho=0.6485 p=0.000339
+s_i range: [0.0158, 0.4887]
+Basque benchmark: R2=0.89 | Welsh benchmark: R2=0.98
+
+r_i vs x_0 REGRESSION (MR)
+OLS: r_i = +0.1775 + +0.5110*x_0
+R2=0.0069 r=0.0830 p=0.6869
+Spearman: rho=0.2246 p=0.2700
+
+fig1 saved.
+fig2 saved.
+fig3 saved.
+fig4 saved.
+fig5 saved
+fig6 saved.
+summary
+N=26 counties | N_obs=78 | Models: ['M0ns', 'M0', 'MR']
+M0ns : a=0.9051 sigma=0.00000 D=0.030318 RMSE=0.0490pp
+M0   : a=1.7329 sigma=0.00760 D=0.000695 RMSE=0.0396pp
+MR   : a=2.4965 sigma=0.00954 D=0.000306 RMSE=0.0686pp
+
+AIC: M0 AICc: M0 BIC: M0
+Prestige grounding (M0ns spatial): R2=0.258 p=0.0081
+
+Pure AS results:
+AS_shared (k=2): a=1.0175 RMSE=0.1656pp
+AS_indiv (k=27): a=0.8449 RMSE=0.0551pp R2(s~x0)=0.794
+AS_free (k=52): mean a=0.8101 median a=0.8262 RMSE=0.0336pp
+
+done!

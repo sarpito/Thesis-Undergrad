@@ -1,0 +1,40 @@
+39 shared-border edges.
+
+synthetic data generation
+True a = 1.31
+True D = 0.05
+True s_i ~ 0.40 + 0.30*x_0 + N(0, 0.03)
+Noise SD = 1.5 pp
+Seed = 78
+
+Sample synthetic trajectories (first 5 comarcas):
+Comarca                    x_0(real)  x_2021(clean)  x_2021(noisy)
+Anana                          0.009          0.604          0.596
+Cantabrica_Alavesa             0.042          0.084          0.088
+Gorbeialdea                    0.272          1.000          0.990
+Llanada_Alavesa                0.033          0.028          0.043
+Montana_Alavesa                0.005          1.000          0.977
+
+fitting to synthetic data
+Fitted a = 1.2941 (true: 1.31)
+Fitted D = 0.050323 (true: 0.05)
+RMSE = 1.1580 pp
+Recovery error: deltaa = -0.0159, deltaD = +0.000323
+
+fitting to real census
+Fitted a = 0.9129 (expected: ~0.91)
+Fitted D = 0.000000 (expected: ~0.0)
+RMSE = 1.7303 pp
+
+summary
+                                      a          D  RMSE (pp)
+Ground truth (synthetic)         1.3100   0.050000          -
+Recovered (synthetic data)       1.2941   0.050323     1.1580
+Fitted (real census data)        0.9129   0.000000     1.7303
+
+prestige recovery (s_i: true vs fitted)
+Spearman rho= 0.6737 p = 0.001128
+OLS R2 = 0.3940 slope = 0.6803
+Mean |deltas_i| = 0.0368
+
+done
