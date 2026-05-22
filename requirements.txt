@@ -1,0 +1,9 @@
+# Language dynamics thesis Python dependencies
+# Install with: pip install -r requirements.txt
+#
+# Geospatial scripts require geopandas.
+
+numpy>=2.3.3
+scipy>=1.16.2
+matplotlib>=3.10.7
+geopandas>=1.1.3
